@@ -1,0 +1,40 @@
+﻿
+$fm-height: 600px;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.filemanager {
+    > div {
+        border: 1px solid red;
+    }
+
+    height: $fm-height;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr); //chia ra 20 cột bằng nhau
+    grid-template-rows: repeat(25, 1fr); //Dòng
+    gap: 2px; //cách các dòng và cột ra
+
+    > .fm-toolbox {
+        grid-column: 1/21; //bắt đầu và kết thúc
+        grid-row: 1/3;
+    }
+
+    > .fm-folder-tree {
+        grid-column: 1/6; //bắt đầu và kết thúc
+        grid-row: 3/25;
+    }
+
+    > .fm-main-panel {
+        grid-column: 6/21; //bắt đầu và kết thúc
+        grid-row: 3/25;
+    }
+
+    > .fm-additional-info {
+        grid-column: 1/21; //bắt đầu và kết thúc
+        grid-row: 25/26;
+    }
+}
