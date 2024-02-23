@@ -13,14 +13,20 @@
     <link href="~/lib/filemanager/css/filemanager.min.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
-    <div class="container">
+    <div class="container" x-data="data">
         <div class="filemanager">
             @*Thanh công cụ*@
             <div class="fm-toolbox">
+                Thanh công cụ
             </div>
 
             @*Cây thư mục*@
             <div class="fm-folder-tree">
+                <template x-for="f in $data._filemanager">
+                    <ul>
+                        <li x-text="f"> </li>
+                    </ul>
+                </template>
             </div>
 
             @*Hiển thị file*@
@@ -30,6 +36,7 @@
 
             @*Thông tin bổ xung*@
             <div class="fm-additional-info">
+                Thông tin bổ xung
             </div>
         </div>
     </div>
